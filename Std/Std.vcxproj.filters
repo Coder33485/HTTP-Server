@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="libhv">
+      <UniqueIdentifier>{67e4cbb9-8b92-49ad-9384-8035a8e76186}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="hv\axios.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\base64.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\Buffer.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\Channel.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\Event.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\EventLoop.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\EventLoopThread.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\EventLoopThreadPool.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hasync.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hatomic.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hbase.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hbuf.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hconfig.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hdef.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hdir.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hendian.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\herr.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hexport.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hfile.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hlog.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hloop.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hmain.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hmap.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hmath.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hmutex.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hobjectpool.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hpath.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hplatform.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hproc.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hscope.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hsocket.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hssl.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hstring.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hsysinfo.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hthread.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hthreadpool.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\htime.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\http_client.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\http_content.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\HttpContext.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\httpdef.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\HttpMessage.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\HttpParser.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\HttpResponseWriter.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\HttpServer.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\HttpService.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hurl.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hv.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\hversion.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\ifconfig.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\iniparser.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\json.hpp">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\md5.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\nlog.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\requests.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\sha1.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\singleton.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\Status.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\TcpClient.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\TcpServer.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\ThreadLocalStorage.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\UdpClient.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\UdpServer.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\WebSocketChannel.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\WebSocketClient.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\WebSocketParser.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\WebSocketServer.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="hv\wsdef.h">
+      <Filter>libhv</Filter>
+    </ClInclude>
+    <ClInclude Include="Std.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Std.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Std.hsconfig">
+      <Filter>资源文件</Filter>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\public\hv.lib">
+      <Filter>资源文件</Filter>
+    </Library>
+  </ItemGroup>
+</Project>

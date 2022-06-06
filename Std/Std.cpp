@@ -1,0 +1,62 @@
+#include "Std.h"
+
+int HsDllRun(const HttpContextPtr& ctx)
+{
+	string path = ".";
+	path += ctx->request->Path(); // Get DLL Path.
+	struct stat fs;
+	if (stat(path.c_str(), &fs) == 0) // Test Path.
+	{
+		if (S_ISREG(fs.st_mode)) // If exist and it is file.
+		{
+			HINSTANCE dllHandle = LoadLibrary(path.c_str()); // Load Library.
+			if (dllHandle) // If OK.
+			{
+				CTX func = (CTX)GetProcAddress(dllHandle, "HsDllMain"); // Load Funcction.
+				if (func) // If OK.
+				{
+					func(ctx); //Run Function.
+					return ctx->send();
+				}
+				else // If Fail.
+				{
+					ctx->writer->Begin();
+					ctx->writer->WriteStatus(HTTP_STATUS_NOT_FOUND);
+					ctx->writer->WriteHeader("Content-Type", "text/html");
+					ctx->writer->WriteBody("<!DOCTYPE html>\n<html>\n<head>\n\t<meta charset=\"utf-8\"/>\n\t<title></title>\n</head>\n<body style=\"text-align: center;\">\n\t<h1>Function HsDllMain Not Found</h1>\n\t<hr/>\n</body>\n</html>");
+					ctx->writer->End();
+					return ctx->send();
+				}
+				FreeLibrary(dllHandle);
+			}
+			else // If Fail.
+			{
+				ctx->writer->Begin();
+				ctx->writer->WriteStatus( HTTP_STATUS_INTERNAL_SERVER_ERROR);
+				ctx->writer->WriteHeader("Content-Type", "text/html");
+				ctx->writer->WriteBody("<!DOCTYPE html>\n<html>\n<head>\n\t<meta charset=\"utf-8\"/>\n\t<title></title>\n</head>\n<body style=\"text-align: center;\">\n\t<h1>Load Dll File Fail.</h1>\n\t<hr/>\n</body>\n</html>");
+				ctx->writer->End();
+				return ctx->send();
+			}
+		}
+		else // If it is not file
+		{
+			ctx->writer->Begin();
+			ctx->writer->WriteStatus(HTTP_STATUS_NOT_FOUND);
+			ctx->writer->WriteHeader("Content-Type", "text/html");
+			ctx->writer->WriteBody("<!DOCTYPE html>\n<html>\n<head>\n\t<meta charset=\"utf-8\"/>\n\t<title></title>\n</head>\n<body style=\"text-align: center;\">\n\t<h1>404 Not Found</h1>\n\t<hr/>\n</body>\n</html>");
+			ctx->writer->End();
+			return ctx->send();
+		}
+	}
+	else // If it is not exist.
+	{
+		ctx->writer->Begin();
+		ctx->writer->WriteStatus(HTTP_STATUS_NOT_FOUND);
+		ctx->writer->WriteHeader("Content-Type", "text/html");
+		ctx->writer->WriteBody("<!DOCTYPE html>\n<html>\n<head>\n\t<meta charset=\"utf-8\"/>\n\t<title></title>\n</head>\n<body style=\"text-align: center;\">\n\t<h1>404 Not Found</h1>\n\t<hr/>\n</body>\n</html>");
+		ctx->writer->End();
+		return ctx->send();
+	}
+	return ctx->send();
+}

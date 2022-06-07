@@ -1,10 +1,6 @@
 #undef UNICODE
 
 #include "General.h"
-#include <Windows.h>
-#include <fstream>
-#include <stdio.h>
-#include <thread>
 
 typedef int (*ONCE)(HttpRequest* req, HttpResponse* resp);
 typedef void (*WAIT)(const HttpRequestPtr& req, const HttpResponseWriterPtr& writer);

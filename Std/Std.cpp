@@ -23,7 +23,7 @@ int HsDllRun(const HttpContextPtr& ctx)
 					ctx->writer->Begin();
 					ctx->writer->WriteStatus(HTTP_STATUS_NOT_FOUND);
 					ctx->writer->WriteHeader("Content-Type", "text/html");
-					ctx->writer->WriteBody("<!DOCTYPE html>\n<html>\n<head>\n\t<meta charset=\"utf-8\"/>\n\t<title></title>\n</head>\n<body style=\"text-align: center;\">\n\t<h1>Function HsDllMain Not Found</h1>\n\t<hr/>\n</body>\n</html>");
+					ctx->writer->WriteBody("<!DOCTYPE html>\n<html>\n<head>\n\t<title>Function HsDllMain Not Found</title>\n</head>\n<body>\n\t<center><h1>Function HsDllMain Not Found</h1></center>\n\t<hr/>\n</body>\n</html>");
 					ctx->writer->End();
 					return ctx->send();
 				}
@@ -32,9 +32,9 @@ int HsDllRun(const HttpContextPtr& ctx)
 			else // If Fail.
 			{
 				ctx->writer->Begin();
-				ctx->writer->WriteStatus( HTTP_STATUS_INTERNAL_SERVER_ERROR);
+				ctx->writer->WriteStatus(HTTP_STATUS_INTERNAL_SERVER_ERROR);
 				ctx->writer->WriteHeader("Content-Type", "text/html");
-				ctx->writer->WriteBody("<!DOCTYPE html>\n<html>\n<head>\n\t<meta charset=\"utf-8\"/>\n\t<title></title>\n</head>\n<body style=\"text-align: center;\">\n\t<h1>Load Dll File Fail.</h1>\n\t<hr/>\n</body>\n</html>");
+				ctx->writer->WriteBody("<!DOCTYPE html>\n<html>\n<head>\n\t<title>Load Dll File Fail.</title>\n</head>\n<body>\n\t<center><h1>Load Dll File Fail.</h1></center>\n\t<hr/>\n</body>\n</html>");
 				ctx->writer->End();
 				return ctx->send();
 			}
@@ -44,7 +44,7 @@ int HsDllRun(const HttpContextPtr& ctx)
 			ctx->writer->Begin();
 			ctx->writer->WriteStatus(HTTP_STATUS_NOT_FOUND);
 			ctx->writer->WriteHeader("Content-Type", "text/html");
-			ctx->writer->WriteBody("<!DOCTYPE html>\n<html>\n<head>\n\t<meta charset=\"utf-8\"/>\n\t<title></title>\n</head>\n<body style=\"text-align: center;\">\n\t<h1>404 Not Found</h1>\n\t<hr/>\n</body>\n</html>");
+			ctx->writer->WriteBody("<!DOCTYPE html>\n<html>\n<head>\n\t<title>404 Not Found</title>\n</head>\n<body>\n\t<center><h1>404 Not Found</h1></center>\n\t<hr/>\n</body>\n</html>");
 			ctx->writer->End();
 			return ctx->send();
 		}
@@ -54,7 +54,7 @@ int HsDllRun(const HttpContextPtr& ctx)
 		ctx->writer->Begin();
 		ctx->writer->WriteStatus(HTTP_STATUS_NOT_FOUND);
 		ctx->writer->WriteHeader("Content-Type", "text/html");
-		ctx->writer->WriteBody("<!DOCTYPE html>\n<html>\n<head>\n\t<meta charset=\"utf-8\"/>\n\t<title></title>\n</head>\n<body style=\"text-align: center;\">\n\t<h1>404 Not Found</h1>\n\t<hr/>\n</body>\n</html>");
+		ctx->writer->WriteBody("<!DOCTYPE html>\n<html>\n<head>\n\t<title>404 Not Found</title>\n</head>\n<body>\n\t<center><h1>404 Not Found</h1></center>\n\t<hr/>\n</body>\n</html>");
 		ctx->writer->End();
 		return ctx->send();
 	}

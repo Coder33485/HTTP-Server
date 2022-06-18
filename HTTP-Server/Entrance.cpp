@@ -172,7 +172,49 @@ int main(int argc, char* argv[])
 				continue;
 			}
 			// Test Request Mode.
-			if (strcmp(ptr, "HEAD") == 0)
+			if (strcmp(ptr, "ANY") == 0)
+			{
+				switch (func_mode)
+				{
+				case 1:
+					func1 = (ONCE)GetProcAddress(dll_handle[dll_handles], func_ptr);
+					if (func1)
+					{
+						service.Any(ptr2, func1);
+						loadFunction = true;
+					}
+					else
+					{
+						loadFunction = false;
+					}
+					break;
+				case 2:
+					func2 = (WAIT)GetProcAddress(dll_handle[dll_handles], func_ptr);
+					if (func2)
+					{
+						service.Any(ptr2, func2);
+						loadFunction = true;
+					}
+					else
+					{
+						loadFunction = false;
+					}
+					break;
+				case 3:
+					func3 = (CTX)GetProcAddress(dll_handle[dll_handles], func_ptr);
+					if (func3)
+					{
+						service.Any(ptr2, func3);
+						loadFunction = true;
+					}
+					else
+					{
+						loadFunction = false;
+					}
+					break;
+				}
+			}
+			else if (strcmp(ptr, "HEAD") == 0)
 			{
 				switch (func_mode)
 				{
@@ -415,48 +457,6 @@ int main(int argc, char* argv[])
 					if (func3)
 					{
 						service.PATCH(ptr2, func3);
-						loadFunction = true;
-					}
-					else
-					{
-						loadFunction = false;
-					}
-					break;
-				}
-			}
-			else if (strcmp(ptr, "ANY") == 0)
-			{
-				switch (func_mode)
-				{
-				case 1:
-					func1 = (ONCE)GetProcAddress(dll_handle[dll_handles], func_ptr);
-					if (func1)
-					{
-						service.Any(ptr2, func1);
-						loadFunction = true;
-					}
-					else
-					{
-						loadFunction = false;
-					}
-					break;
-				case 2:
-					func2 = (WAIT)GetProcAddress(dll_handle[dll_handles], func_ptr);
-					if (func2)
-					{
-						service.Any(ptr2, func2);
-						loadFunction = true;
-					}
-					else
-					{
-						loadFunction = false;
-					}
-					break;
-				case 3:
-					func3 = (CTX)GetProcAddress(dll_handle[dll_handles], func_ptr);
-					if (func3)
-					{
-						service.Any(ptr2, func3);
 						loadFunction = true;
 					}
 					else

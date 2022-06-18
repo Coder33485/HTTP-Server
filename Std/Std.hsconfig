@@ -1,1 +1,2 @@
-CTX HsDllRun ANY *.dll
+CTX HsDllRun GET *.dll
+CTX HsDllRun POST *.dll

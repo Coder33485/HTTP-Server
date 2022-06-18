@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
 	file1.open(config, ios::in | ios::binary);
 	//  Open the configuration file.
 	char* line = new char[4096];
-	char* ptr = nullptr, * ptr2 = nullptr, * func_ptr = nullptr;
+	char* ptr = nullptr, * ptr2 = nullptr, * func_ptr = nullptr, * func_mode_ptr = nullptr;
 	int func_mode = 0;
 	ONCE func1 = nullptr;
 	WAIT func2 = nullptr;
@@ -120,27 +120,27 @@ int main(int argc, char* argv[])
 				}
 			}
 
-			ptr = strtok(line, " "); // Get Function Type.
+			func_mode_ptr = strtok(line, " "); // Get Function Type.
 
 			// Error Proc.
-			if (ptr == nullptr)
+			if (func_mode_ptr == nullptr)
 			{
 				memset(line, 0, 4096);
 				continue;
 			}
 
 			// Test FuncType.
-			if (strcmp(ptr, "ONCE") == 0)
+			if (strcmp(func_mode_ptr, "ONCE") == 0)
 			{
 				func_mode = 1;
 			}
 			// Test FuncType.
-			else if (strcmp(ptr, "WAIT") == 0)
+			else if (strcmp(func_mode_ptr, "WAIT") == 0)
 			{
 				func_mode = 2;
 			}
 			// Test FuncType.
-			else if (strcmp(ptr, "CTX") == 0)
+			else if (strcmp(func_mode_ptr, "CTX") == 0)
 			{
 				func_mode = 3;
 			}
@@ -470,7 +470,7 @@ int main(int argc, char* argv[])
 			{
 				if (loadFunction)
 				{
-					cout << "成功加载函数：" << func_ptr << "，目标：" << ptr2 << endl;
+					cout << "成功加载" << func_mode_ptr << "函数：" << func_ptr << " 目标：" << ptr << " -> " << ptr2 << endl;
 				}
 				else
 				{
